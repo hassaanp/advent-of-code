@@ -20,7 +20,7 @@ while (days < 256) {
   for (key in [0, 1, 2, 3, 4, 5, 6, 7]) {
     dict[key] = dict[Number(key) + 1];
   }
-  dict[6] = dict[6] + newToAdd;
+  dict[6] += newToAdd;
   dict[8] = newToAdd;
   days++;
 }

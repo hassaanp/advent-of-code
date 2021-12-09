@@ -17,10 +17,10 @@ for (let i = 0; i < input.length; i++) {
     }
   }
 }
-let basin = [];
+let basins = [];
 minArray.forEach((e, i) => {
-  basin.push([]);
-  countLowPoints(e[0], e[1], basin[i]);
+  basins.push([]);
+  countLowPoints(e[0], e[1], basins[i]);
 });
 
 function countLowPoints(i, j, basin) {
@@ -46,7 +46,7 @@ function countLowPoints(i, j, basin) {
   }
   return;
 }
-console.log(findThreeLargest(basin));
+
 function findThreeLargest(arr) {
   return arr
     .map((el) => el.length)
@@ -54,3 +54,5 @@ function findThreeLargest(arr) {
     .splice(0, 3)
     .reduce((a, b) => a * b, 1);
 }
+
+console.log(findThreeLargest(basins));

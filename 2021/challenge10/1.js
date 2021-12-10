@@ -32,7 +32,6 @@ for (let i = 0; i < input.length; i++) {
   }
 }
 
-console.log(corrupted);
 let sum = 0;
 corrupted.forEach((c) => {
   sum += illegalScore[c];

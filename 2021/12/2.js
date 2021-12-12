@@ -8,21 +8,19 @@ const smallCavesMap = {};
 // populate the maps
 for (let i = 0; i < input.length; i++) {
   const [el1, el2] = input[i].split("-");
-  connectionsMap[el1] = [];
-  connectionsMap[el2] = [];
+  if (!connectionsMap[el1]) connectionsMap[el1] = [];
+  if (!connectionsMap[el2]) connectionsMap[el2] = [];
+
+  connectionsMap[el1].push(el2);
+  connectionsMap[el2].push(el1);
+
   populateSmallCavesMap(el1);
   populateSmallCavesMap(el2);
 }
 
-// identify the connections
-for (let i = 0; i < input.length; i++) {
-  const [el1, el2] = input[i].split("-");
-  connectionsMap[el1].push(el2);
-  connectionsMap[el2].push(el1);
-}
-
 let connections = connectionsMap["start"];
 let count = 0;
+
 // run against start node only
 for (i = 0; i < connections.length; i++) {
   let visited = ["start"];
